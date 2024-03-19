@@ -18,7 +18,7 @@ build_prompts:
   value: False 
 num_epochs:
   desc: Number of epochs.
-  value: 1
+  value: 4
 use_attn:
   desc: Attention mechanism. Suggested one of ['flash_attention_2', 'sdpa']
   value: flash_attention_2

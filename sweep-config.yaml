@@ -13,6 +13,8 @@ command:
   - ${env}
   - ${interpreter}
   - ${program}
+  - --project
+  - climate-peft
 parameters:
   optimizer:
     values: ['adamw_torch_fused', 'adamw_bnb_8bit', 'paged_adamw_32bit']
