@@ -1,0 +1,45 @@
+hf_model:
+  desc: HuggingFace Model ID
+  value: eci-io/climategpt-7b
+hf_dataset:
+  desc: HuggingFace Dataset ID
+  value: climatebert/climate_sentiment
+output_dir:
+  desc: Local subdirectory to store outputs
+  value: adapters
+push_adapter_to_hub:
+  desc: Push adapter to HuggingFace Hub.
+  value: False
+hub_id:
+  desc: HF Hub ID to push adapter to
+  value: climate-test
+build_prompts:
+  desc: Flag to rebuild prompts from dataset. Required 'True' for 1st run.
+  value: False 
+num_epochs:
+  desc: Number of epochs.
+  value: 1
+use_attn:
+  desc: Attention mechanism. Suggested one of ['flash_attention_2', 'sdpa']
+  value: flash_attention_2
+optimizer:
+  desc: Optimizer. Suggested one of ['adamw_torch_fused', 'adamw_bnb_8bit', 'paged_adamw_32bit']
+  value: adamw_bnb_8bit
+lr:
+  desc: Learning Rate
+  value: 0.0002
+lr_schedule:
+  desc: Learning Rate Scheduler from ['cosine', 'constant']
+  value: cosine
+alpha:
+  desc: QLoRA Alpha from [8, 16, 32, 64, 128]
+  value: 16
+dropout:
+  desc: QLoRA dropout from [0.05, 0.1]
+  value: 0.05
+rank:
+  desc: QLoRA rank (r) from [8, 16, 32, 64, 128]
+  value: 32
+max_seq:
+  desc: Max Sequence Length from ['1024', '2048', '3072']
+  value: 2048

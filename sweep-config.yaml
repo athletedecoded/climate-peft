@@ -1,0 +1,20 @@
+# WandB Sweep configuration
+# Run `wandb sweep sweep_config.yaml`
+# Will return <SWEEP_ID>
+# Run `wandb agent <SWEEP_ID>`
+project: climate-peft
+name: Tune Optimizer & Schedule
+program: finetune.py
+method: grid
+metric:
+  name: val_loss
+  goal: minimize
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+parameters:
+  optimizer:
+    values: ['adamw_torch_fused', 'adamw_bnb_8bit', 'paged_adamw_32bit']
+  lr_schedule:
+    values: ['constant', 'cosine']
