@@ -27,8 +27,10 @@ LBL2IDX = {
 }
 
 SYSTEM_PROMPT = """
-  Analyze the sentiment of the user provided content and determine if it is describing risk, opportunity, or neutral sentiment related to climate and the environment.
-  Your response should be the corresponding sentiment label "risk" or "opportunity" or "neutral".
+  Analyze the sentiment of the user provided content and determine if 
+  it is describing risk, opportunity, or neutral sentiment related to 
+  climate and the environment. Your response should be the corresponding 
+  sentiment label "risk" or "opportunity" or "neutral".
 """
 
 ## ---------------------------------
@@ -86,6 +88,7 @@ def create_prompt(sample):
       {"role": "assistant", "content": IDX2LBL[sample["label"]]}
     ]
   }
+  
 
 def build_prompts(dataset_id):
 

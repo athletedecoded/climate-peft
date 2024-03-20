@@ -9,7 +9,7 @@ output_dir:
   value: adapters
 push_adapter_to_hub:
   desc: Push adapter to HuggingFace Hub.
-  value: False
+  value: True
 hub_id:
   desc: HF Hub ID to push adapter to
   value: climate-peft
