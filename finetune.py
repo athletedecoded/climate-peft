@@ -35,8 +35,6 @@ def main():
     args = parse_args()
     logger, output_dir = init_wandb(args.project)
 
-    print(wandb.config)
-
     # Init CodeCarbon Tracker
     cc_tracker = EmissionsTracker(project_name=wandb.run.name)
 
@@ -138,8 +136,8 @@ def main():
     # Run finetuning & track with CodeCarbon
     cc_tracker.start()
     trainer.train()
-    emissions = cc_tracker.stop()
-    wandb.log({"Training CO2 emissions (kg)": emissions})
+    co2 = cc_tracker.stop()
+    wandb.log({"Training CO2 emissions (kg)": co2})
 
     # save best model
     trainer.save_model()

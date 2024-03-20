@@ -52,8 +52,8 @@ $ python3 finetune.py --project <wandb_project_name>
 
 A WandB Sweep can configure multiple training runs using [sweep_config.yaml](sweep-config.yaml) and running:
 ```
-$ wandb sweep sweep_config.yaml # Returns <wandb_sweep_id>
-$ wandb agent <wandb_sweep_id>
+$ wandb sweep ./sweep_config.yaml # Returns <wandb_sweep_id>
+$ wandb agent --count <num_runs> <wandb_sweep_id>
 ```
 
 <hr>

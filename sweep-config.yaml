@@ -3,7 +3,7 @@
 # Will return <SWEEP_ID>
 # Run `wandb agent <SWEEP_ID>`
 project: climate-peft
-name: Tune Optimizer & Schedule
+name: MaxSeq HP Search
 program: finetune.py
 method: grid
 metric:
@@ -16,7 +16,5 @@ command:
   - --project
   - climate-peft
 parameters:
-  optimizer:
-    values: ['adamw_torch_fused', 'adamw_bnb_8bit', 'paged_adamw_32bit']
-  lr_schedule:
-    values: ['constant', 'cosine']
+  max_seq:
+    values: [1024, 2048, 3072]

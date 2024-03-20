@@ -12,7 +12,7 @@ push_adapter_to_hub:
   value: False
 hub_id:
   desc: HF Hub ID to push adapter to
-  value: climate-test
+  value: climate-peft
 build_prompts:
   desc: Flag to rebuild prompts from dataset. Required 'True' for 1st run.
   value: False 
@@ -23,7 +23,7 @@ use_attn:
   desc: Attention mechanism. Suggested one of ['flash_attention_2', 'sdpa']
   value: flash_attention_2
 optimizer:
-  desc: Optimizer. Suggested one of ['adamw_torch_fused', 'adamw_bnb_8bit', 'paged_adamw_32bit']
+  desc: Optimizer. Suggested one of ['adamw_bnb_8bit', 'paged_adamw_32bit', 'adamw_torch_fused']
   value: adamw_bnb_8bit
 lr:
   desc: Learning Rate
@@ -39,7 +39,7 @@ dropout:
   value: 0.05
 rank:
   desc: QLoRA rank (r) from [8, 16, 32, 64, 128]
-  value: 32
+  value: 8
 max_seq:
-  desc: Max Sequence Length from ['1024', '2048', '3072']
+  desc: Max Sequence Length from [1024, 2048, 3072]
   value: 2048

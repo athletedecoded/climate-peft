@@ -49,7 +49,7 @@ def init_wandb(project_name):
 
     # Update run name
     timestamp = datetime.now().strftime('%y%m%d-%H%M')
-    run_name = f"{timestamp}-{wandb.config.lr_schedule}-LR{wandb.config.lr}-A{wandb.config.alpha}"\
+    run_name = f"{timestamp}-{wandb.config.lr_schedule}-{wandb.config.optimizer}-A{wandb.config.alpha}"\
                f"-D{wandb.config.dropout}-R{wandb.config.rank}-S{wandb.config.max_seq}"
     if wandb.config.use_attn == 'flash_attention_2':
         run_name += "-FA"
