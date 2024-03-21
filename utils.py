@@ -135,9 +135,9 @@ def evaluate(y_true, y_preds, output_dir, log_to_wandb):
 
     plot_roc_curve(y_true, y_preds, output_dir, log_to_wandb)
 
-    test_rec = recall_score(y_true, y_preds, average='micro')
-    test_prec = precision_score(y_true, y_preds, average='micro')
-    test_f1 = f1_score(y_true, y_preds, average='micro')
+    test_rec = recall_score(y_true, y_preds, average='macro')
+    test_prec = precision_score(y_true, y_preds, average='macro')
+    test_f1 = f1_score(y_true, y_preds, average='macro')
     test_acc = accuracy_score(y_true, y_preds)
 
     print(f"Test recall: {test_rec}")
