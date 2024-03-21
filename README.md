@@ -1,5 +1,15 @@
 # Climate PEFT
 
+Finetuning pipeline using Huggingface, QLoRA, W&B
+
+Base model: [eci-io/climate-gpt](https://huggingface.co/eci-io/climategpt-7b)
+
+Dataset: [climatebert/climate_sentiment](https://huggingface.co/datasets/climatebert/climate_sentiment)
+
+Final adapter: [kahliahogg/climate-peft](https://huggingface.co/kahliahogg/climate-peft)
+
+Presentation deck is available [here](./deck.pdf)
+
 ## Environment Config
 
 **Install**
